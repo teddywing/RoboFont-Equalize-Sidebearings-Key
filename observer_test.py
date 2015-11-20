@@ -1,6 +1,6 @@
 from mojo.events import addObserver
 
-class EqualizeSidebearings:
+class EqualizeSidebearings(object):
     def __init__(self):
         addObserver(self, 'center', 'spaceCenterKeyUp')
 

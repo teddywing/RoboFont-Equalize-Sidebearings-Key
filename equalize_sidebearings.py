@@ -1,5 +1,4 @@
 from mojo.events import addObserver
-import vanilla
 
 class EqualizeSidebearings(object):
     def __init__(self):

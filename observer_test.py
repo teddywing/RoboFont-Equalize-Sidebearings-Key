@@ -17,5 +17,3 @@ class EqualizeSidebearings(object):
             info['glyph'].center()
 
 EqualizeSidebearings()
-
-print 'test'

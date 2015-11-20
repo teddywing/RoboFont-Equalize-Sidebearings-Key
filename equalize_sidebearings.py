@@ -6,6 +6,12 @@ class EqualizeSidebearings(object):
 
     def center(self, info):
         if info['event'].characters() == 'a':
-            info['glyph'].center()
+            g = info['glyph']
+
+            g.prepareUndo('Equalize Sidebearings')
+
+            g.center()
+
+            g.performUndo()
 
 EqualizeSidebearings()

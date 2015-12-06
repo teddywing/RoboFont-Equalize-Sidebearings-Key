@@ -1,7 +1,7 @@
 from AppKit import NSUserDefaults
 
 from mojo.events import addObserver
-# from lib.doodleMenus import SpaceCenterMenuForGlyph
+from lib.doodleMenus import SpaceCenterMenuForGlyph
 # from tools.defaults import getDefault
 
 def getDefault(key, defaultValue = None, defaultClass = None):
@@ -11,6 +11,14 @@ def getDefault(key, defaultValue = None, defaultClass = None):
         return defaultClass(value)
     return value
 
+
+class CustomSpaceCenterMenuForGlyph(SpaceCenterMenuForGlyph):
+
+    def __init__(self, glyph):
+        self._glyph = glyph
+        super(SpaceCenterMenuForGlyph, self).__init__()
+
+
 class EqualizeSidebearings(object):
     def __init__(self):
         addObserver(self, 'center', 'spaceCenterKeyUp')
@@ -18,8 +26,16 @@ class EqualizeSidebearings(object):
     def center(self, info):
         if info['event'].characters() == 'a':
             # g = info['glyph']
-            self.equalize_sidebearings(info['glyph'])
-            # SpaceCenterMenuForGlyph(info['event'], self, g)
+            # self.equalize_sidebearings(info['glyph'])
+            # space_center_menu = SpaceCenterMenuForGlyph(info['event'], self, g, None)
+            # space_center_menu.equalSideBearings_(self)
+            space_center_menu = CustomSpaceCenterMenuForGlyph(info['glyph'])
+            space_center_menu.equalSideBearings_(self)
+
+            # import vanilla
+            # self.w = vanilla.Window((400, 400, 1000, 900))
+            # self.w.text = vanilla.ObjectBrowser((0, 0, -0, -0), space_center_menu)
+            # self.w.open()
             #
             # g.prepareUndo('Equalize Sidebearings')
             #
@@ -27,20 +43,20 @@ class EqualizeSidebearings(object):
             #
             # g.performUndo()
 
-    def equalize_sidebearings(self, glyph):
-        useItalicAngleForDisplay = getDefault('glyphViewShouldUseItalicAngleForDisplay')
-        leftMarginAttribute = 'leftMargin'
-        rightMarginAttribute = 'rightMargin'
-        if useItalicAngleForDisplay:
-            leftMarginAttribute = 'angledLeftMargin'
-            rightMarginAttribute = 'angledRightMargin'
-        left = getattr(glyph, leftMarginAttribute)
-        right = getattr(glyph, rightMarginAttribute)
-        margin = int(round((left + right) / 2.0))
-        glyph.prepareUndo('Equalize sidebearings')
-        setattr(glyph, leftMarginAttribute, margin)
-        setattr(glyph, rightMarginAttribute, margin)
-        glyph.selection.resetSelectionPath()
-        glyph.performUndo()
+    # def equalize_sidebearings(self, glyph):
+    #     useItalicAngleForDisplay = getDefault('glyphViewShouldUseItalicAngleForDisplay')
+    #     leftMarginAttribute = 'leftMargin'
+    #     rightMarginAttribute = 'rightMargin'
+    #     if useItalicAngleForDisplay:
+    #         leftMarginAttribute = 'angledLeftMargin'
+    #         rightMarginAttribute = 'angledRightMargin'
+    #     left = getattr(glyph, leftMarginAttribute)
+    #     right = getattr(glyph, rightMarginAttribute)
+    #     margin = int(round((left + right) / 2.0))
+    #     glyph.prepareUndo('Equalize sidebearings')
+    #     setattr(glyph, leftMarginAttribute, margin)
+    #     setattr(glyph, rightMarginAttribute, margin)
+    #     glyph.selection.resetSelectionPath()
+    #     glyph.performUndo()
 
 EqualizeSidebearings()

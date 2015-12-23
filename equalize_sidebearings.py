@@ -32,7 +32,8 @@ class EqualizeSidebearings(object):
             # space_center_menu.equalSideBearings_(self)
             # import pdb; pdb.set_trace()
             # RemotePdb('127.0.0.1', 4444).set_trace()
-            space_center_menu = CustomSpaceCenterMenuForGlyph(info['glyph'])
+            space_center_menu = CustomSpaceCenterMenuForGlyph(
+                info['glyph'].naked())
             space_center_menu.equalSideBearings_(self)
 
             # import vanilla

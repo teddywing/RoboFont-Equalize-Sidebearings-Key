@@ -17,10 +17,6 @@ class EqualizeSidebearings(object):
 
     def center(self, info):
         if info['event'].characters() == 'a':
-            # g = info['glyph']
-            # self.equalize_sidebearings(info['glyph'])
-            # space_center_menu = SpaceCenterMenuForGlyph(info['event'], self, g, None)
-            # space_center_menu.equalSideBearings_(self)
             space_center_menu = CustomSpaceCenterMenuForGlyph(
                 info['glyph'].naked())
             space_center_menu.equalSideBearings_(self)
@@ -29,12 +25,6 @@ class EqualizeSidebearings(object):
             # self.w = vanilla.Window((400, 400, 1000, 900))
             # self.w.text = vanilla.ObjectBrowser((0, 0, -0, -0), space_center_menu)
             # self.w.open()
-            #
-            # g.prepareUndo('Equalize Sidebearings')
-            #
-            # g.center()
-            #
-            # g.performUndo()
 
 
 EqualizeSidebearings()

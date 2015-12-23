@@ -21,10 +21,5 @@ class EqualizeSidebearings(object):
                 info['glyph'].naked())
             space_center_menu.equalSideBearings_(self)
 
-            # import vanilla
-            # self.w = vanilla.Window((400, 400, 1000, 900))
-            # self.w.text = vanilla.ObjectBrowser((0, 0, -0, -0), space_center_menu)
-            # self.w.open()
-
 
 EqualizeSidebearings()

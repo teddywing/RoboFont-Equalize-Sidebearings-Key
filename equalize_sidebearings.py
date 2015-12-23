@@ -3,7 +3,6 @@ from AppKit import NSUserDefaults
 from mojo.events import addObserver
 from lib.doodleMenus import SpaceCenterMenuForGlyph
 # from tools.defaults import getDefault
-# from remote_pdb import RemotePdb
 
 def getDefault(key, defaultValue = None, defaultClass = None):
     defaultsFromFile = NSUserDefaults.standardUserDefaults()
@@ -30,8 +29,6 @@ class EqualizeSidebearings(object):
             # self.equalize_sidebearings(info['glyph'])
             # space_center_menu = SpaceCenterMenuForGlyph(info['event'], self, g, None)
             # space_center_menu.equalSideBearings_(self)
-            # import pdb; pdb.set_trace()
-            # RemotePdb('127.0.0.1', 4444).set_trace()
             space_center_menu = CustomSpaceCenterMenuForGlyph(
                 info['glyph'].naked())
             space_center_menu.equalSideBearings_(self)

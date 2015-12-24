@@ -1,3 +1,5 @@
+all: clean build install
+
 build:
 	sh build.sh
 

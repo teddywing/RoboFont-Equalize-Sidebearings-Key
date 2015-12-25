@@ -1,5 +1,3 @@
-from AppKit import NSUserDefaults
-
 from mojo.events import addObserver
 from lib.doodleMenus import SpaceCenterMenuForGlyph
 

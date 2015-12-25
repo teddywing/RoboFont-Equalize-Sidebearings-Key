@@ -11,3 +11,6 @@ cp "${current_dir}"/*.py "${base_dir}/lib"
 
 # Copy Info.plist into extension bundle
 cp "${current_dir}"/info.plist "${base_dir}"
+
+# Update timestamp in info.plist
+/usr/libexec/PlistBuddy -c "Set timeStamp $(python -c 'import time; print(time.time())')" "${base_dir}"/info.plist

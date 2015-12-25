@@ -10,11 +10,13 @@ class CustomSpaceCenterMenuForGlyph(SpaceCenterMenuForGlyph):
 
 
 class EqualizeSidebearings(object):
+    DEFAULT_ACTIVATION_KEY = 'e'
+
     def __init__(self):
         addObserver(self, 'equalize', 'spaceCenterKeyUp')
 
     def equalize(self, info):
-        if info['event'].characters() == 'a':
+        if info['event'].characters() == self.DEFAULT_ACTIVATION_KEY:
             space_center_menu = CustomSpaceCenterMenuForGlyph(
                 info['glyph'].naked())
             space_center_menu.equalSideBearings_(self)

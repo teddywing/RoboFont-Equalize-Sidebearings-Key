@@ -20,7 +20,6 @@ class PreferencesWindow(object):
 
     def edit_text_callback(self, sender):
         self.preferences.activation_key = sender.get()
-        self.preferences.save()
 
 
 PreferencesWindow()

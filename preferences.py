@@ -8,4 +8,5 @@ class EqualizeSidebearingsPreferences(object):
         self.w.activation_key = vanilla.EditText((82, 12, -10, 25), 'e')
         self.w.open()
 
+
 EqualizeSidebearingsPreferences()

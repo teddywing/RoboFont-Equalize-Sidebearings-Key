@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>path</key>
-			<string>preferences.py</string>
+			<string>preferences_window.py</string>
 			<key>preferredName</key>
 			<string>Preferences</string>
 			<key>shortKey</key>

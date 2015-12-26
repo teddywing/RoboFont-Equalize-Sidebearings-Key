@@ -1,5 +1,4 @@
 from mojo.extensions import getExtensionDefault, setExtensionDefault
-# from lib.doodlePreferences import HotKeyItem
 
 
 class Preferences(object):

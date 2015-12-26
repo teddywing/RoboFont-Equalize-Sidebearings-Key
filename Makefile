@@ -8,3 +8,7 @@ clean:
 
 install:
 	open 'dist/Equalize Sidebearings.roboFontExt'
+
+archive: clean build
+	rm -f dist/Equalize-Sidebearings.roboFontExt.zip
+	cd dist && zip -r Equalize-Sidebearings.roboFontExt.zip 'Equalize Sidebearings.roboFontExt'

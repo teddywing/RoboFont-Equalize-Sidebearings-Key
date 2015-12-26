@@ -21,6 +21,8 @@ class PreferencesWindow(object):
     def edit_text_callback(self, sender):
         value = sender.get()
 
+        # Only allow a single character to be entered because this is
+        # supposed to be a hotkey
         if len(value) > 1:
             value = value[0]
 

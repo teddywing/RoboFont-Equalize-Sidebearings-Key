@@ -25,7 +25,7 @@ demo](screenshots/Equalize-Sidebearings.gif)
 
 ## Installation
 Download the extension from the [releases
-page](https://github.com/teddywing/RoboFont-Equalize-Sidebearings-Key).
+page](https://github.com/teddywing/RoboFont-Equalize-Sidebearings-Key/releases).
 Double-click it to install.
 
 
